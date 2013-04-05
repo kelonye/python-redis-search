@@ -19,7 +19,7 @@ class Search:
         txt = self.__remove_non_ascii__(txt)
         txt = self.__remove_vowels__(txt)
         txt = self.__remove_dups__(txt)
-        txt = self.__resolve_metaphones__(txt)
+        txt = self.__process_metaphone__(txt)
         return txt
 
     # method to remove vowels from a txt
@@ -35,12 +35,12 @@ class Search:
                 txt = txt.replace(char, '')
         return txt
 
-    # method to remove duplicates from a txt
+    # method to remove duplicate char from a txt
     def __remove_dups__(self, txt):
         return txt
 
-    # method to resolve metaphones
-    def __resolve_metaphones__(self, txt):
+    # method to find metaphone codes
+    def __process_metaphone__(self, txt):
         for key, value in self.mapper.iteritems():
             for char in value:
                 txt = txt.replace(char, key)
@@ -68,13 +68,13 @@ SWAHILI = {
     'dh': ['th'],
     'f': ['v'],
     'g': ['k'],
-    'j': ['ch'],
+    #'j': ['ch'],
     #'k': ['g'],
     'l': ['r'],
     #'p': ['b'],
-    'r': ['l'],
+    #'r': ['l'],
     's': ['z'],
-    'sh': ['ch'],
+    #'sh': ['ch'],
     #'t': ['d'],
     #'v': ['f'],
     #'z': ['s']
