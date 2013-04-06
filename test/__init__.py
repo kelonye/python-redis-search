@@ -74,7 +74,7 @@ class SearchT(unittest.TestCase):
         assert len(results) == 1
         assert int(results[0]) == 1
 
-    def test_vowel(self):
+    def test_dup(self):
         villages = ['Gatwekera', 'Patwekera']
         for index, name in enumerate(villages):
             self.reds_client.push(index, name)

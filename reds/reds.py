@@ -54,6 +54,10 @@ class Search:
     def push(self, index, txt):
         self.redis_client.hset(self.namespace, index, txt)
 
+    # method to remove index
+    def remove(self, index, txt):
+        self.redis_client.hdel(self.namespace, index)
+
     # method to match query_txt with indexed txts
     def query(self, query_txt):
         
