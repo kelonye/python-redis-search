@@ -74,5 +74,18 @@ class SearchT(unittest.TestCase):
         assert len(results) == 1
         assert int(results[0]) == 1
 
+    def test_vowel(self):
+        villages = ['Gatwekera', 'Patwekera']
+        for index, name in enumerate(villages):
+            self.reds_client.push(index, name)
+
+        results = self.reds_client.query('Gattwekera')
+        assert len(results) == 1
+        assert int(results[0]) == 0
+
+        results = self.reds_client.query('Ppatwekera')
+        assert len(results) == 1
+        assert int(results[0]) == 1
+
 if __name__ == '__main__':
     unittest.main()

@@ -19,7 +19,7 @@ class Search:
         txt = self.__remove_non_ascii__(txt)
         txt = self.__remove_vowels__(txt)
         txt = self.__remove_dups__(txt)
-        txt = self.__process_metaphone__(txt)
+        txt = self.__apply_phonetic_algorithm__(txt)
         return txt
 
     # method to remove vowels from a txt
@@ -37,10 +37,14 @@ class Search:
 
     # method to remove duplicate char from a txt
     def __remove_dups__(self, txt):
+        for char in string.ascii_lowercase:
+            dup = char+char
+            txt = txt.replace(dup, char)
         return txt
 
     # method to find metaphone codes
-    def __process_metaphone__(self, txt):
+    def __apply_phonetic_algorithm__(self, txt):
+        # http://en.wikipedia.org/wiki/Phonetic_algorithm
         for key, value in self.mapper.iteritems():
             for char in value:
                 txt = txt.replace(char, key)
