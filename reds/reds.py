@@ -65,7 +65,7 @@ class Search:
 
         results = []
         for key, value in items.iteritems():
-            if self.__resolve__(value) == self.__resolve__(query_txt):
+            if self.__resolve__(query_txt) in self.__resolve__(value):
                 results.append(key)
         return results
 
