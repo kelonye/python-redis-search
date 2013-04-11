@@ -79,11 +79,11 @@ class SearchT(unittest.TestCase):
         for index, name in enumerate(villages):
             self.reds_client.push(index, name)
 
-        results = self.reds_client.query('Gattwekera')
+        results = self.reds_client.query('Gattttttwekera')
         assert len(results) == 1
         assert int(results[0]) == 0
 
-        results = self.reds_client.query('Ppatwekera')
+        results = self.reds_client.query('Pppatwekkerrra')
         assert len(results) == 1
         assert int(results[0]) == 1
 

@@ -37,9 +37,10 @@ class Search:
 
     # method to remove duplicate char from a txt
     def __remove_dups__(self, txt):
-        for char in string.ascii_lowercase:
-            dup = char+char
-            txt = txt.replace(dup, char)
+        txt = re.sub(r'([a-z])\1+', r'\1', txt)
+        # for char in string.ascii_lowercase:
+        #     dup = char+char
+        #     txt = txt.replace(dup, char)
         return txt
 
     # method to find metaphone codes
