@@ -12,7 +12,7 @@ import redis
 class SearchT(unittest.TestCase):
 
     def setUp(self):
-        self.redis_client = redis.StrictRedis(db='python_redis_search')
+        self.redis_client = redis.StrictRedis(db=12)
         self.reds_client = reds.SwahiliSearch('villages', self.redis_client)
 
     def tearDown(self):

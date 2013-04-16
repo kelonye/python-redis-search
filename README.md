@@ -35,67 +35,24 @@ for pk in results:
     print Location.objects.get(pk=pk).name
 
 # teardown
-for name in location_names:
-    location = Location.objects.get(name=name)
-    location.delete()
-
+Location.objects.delete()
 redis_client.flushdb()
 
 ```
 
 ## Api
 
-
 ### Search(redis_client, namespace)
+  return a new search instance using `redis_client` with `namespace`
 
-  - redis_client: new redis client
-  - namespace: search group name
+### Search#push(index, string)
+  add search index `string`
 
-  returns a new reds client
-
-### Search#push(string)
-  - string: search index
-  adds a search index
-
-### Search#query(query_string)
-  - query_string: text to query
-
-  returns search results by query_string
+### Search#query(query)
+  returns search results for `query`
 
 ### SwahiliSearch(redis_client, namespace)
-  - client to search swahili texts
-  - extends `Search`
-
-## Test
-
-```
-make
-```
-
-## License
-
-MIT
-
-```
-
-## Api
-
-### Search(redis_client, namespace)
-  - redis_client: new redis client
-  - namespace: search group name
-  returns a new reds client
-
-### Search#push(string)
-  - string: search index
-  adds a search index
-
-### Search#query(query_string)
-  - query_string: text to query
-  returns search results by query_string
-
-### SwahiliSearch(redis_client, namespace)
-  - client for swahili texts
-  - extends `Search`
+  used to search swahili texts
 
 ## Test
 
