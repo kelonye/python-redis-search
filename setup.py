@@ -8,7 +8,7 @@ setup(
     description='Simple full text search library for python backed by Redis.',
     author='Mitchel Kelonye',
     author_email='kelonyemitchel@gmail.com',
-    url='https://github.com/kelonye/python_redis_search',
+    url='https://github.com/kelonye/python-redis-search',
     packages=find_packages(exclude=['test.py']),
     install_requires = ['redis'],
     license='MIT License',

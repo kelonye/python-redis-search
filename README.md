@@ -3,7 +3,7 @@
 
 
 ```
-pip install -e git://github.com/kelonye/python_redis_search.git#egg=reds
+pip install -e git://github.com/kelonye/python-redis-search.git#egg=reds
 ```
 
 ## Example (django)
