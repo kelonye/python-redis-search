@@ -1,1 +1,0 @@
-from reds import *

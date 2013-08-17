@@ -9,7 +9,8 @@ setup(
     author='Mitchel Kelonye',
     author_email='kelonyemitchel@gmail.com',
     url='https://github.com/kelonye/python-redis-search',
-    packages=find_packages(exclude=['test.py']),
+    packages=['reds',],
+    package_dir = {'reds': 'lib'},
     install_requires = ['redis'],
     license='MIT License',
     zip_safe=True)
